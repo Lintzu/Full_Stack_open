@@ -1,0 +1,92 @@
+### Get all persons
+GET http://localhost:3001/api/persons
+
+###
+### Get info page
+GET http://localhost:3001/info
+
+###
+### Get single person (replace with real ID)
+GET http://localhost:3001/api/persons/507f1f77bcf86cd799439011
+
+###
+### Get single person (non-existent - should return 404)
+GET http://localhost:3001/api/persons/507f1f77bcf86cd799439099
+
+###
+### Get with malformatted ID (should return 400)
+GET http://localhost:3001/api/persons/123
+
+###
+### Delete person (replace with real ID)
+DELETE http://localhost:3001/api/persons/507f1f77bcf86cd799439011
+
+###
+### Add valid person
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "number": "09-1234567"
+}
+
+###
+### Add person with name too short (should fail)
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Ab",
+  "number": "09-1234567"
+}
+
+###
+### Add person with invalid phone (no dash)
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Test Person",
+  "number": "1234567"
+}
+
+###
+### Add person with invalid phone (only 1 digit before dash)
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Test Person",
+  "number": "1-234567"
+}
+
+###
+### Add person with valid phone (2 digits)
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Valid Person 1",
+  "number": "09-1234556"
+}
+
+###
+### Add person with valid phone (3 digits)
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Valid Person 2",
+  "number": "040-22334455"
+}
+
+###
+### Update person (replace with real ID)
+PUT http://localhost:3001/api/persons/507f1f77bcf86cd799439012
+Content-Type: application/json
+
+{
+  "name": "Bob Smith",
+  "number": "09-9999999"
+}
