@@ -1,0 +1,69 @@
+### Get all blogs
+GET http://localhost:3003/api/blogs
+
+###
+
+### Create a new blog
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+  "title": "Understanding React Hooks",
+  "author": "Jane Doe",
+  "url": "https://example.com/react-hooks",
+  "likes": 5
+}
+
+###
+
+### Create another blog
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+  "title": "Async/Await in JavaScript",
+  "author": "John Smith",
+  "url": "https://example.com/async-await",
+  "likes": 12
+}
+
+###
+
+### Create a third blog
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+  "title": "Introduction to MongoDB",
+  "author": "Alice Johnson",
+  "url": "https://example.com/mongodb-intro",
+  "likes": 8
+}
+
+###
+
+### Delete a blog (replace with actual ID)
+DELETE http://localhost:3003/api/blogs/67339cf8ce4e13d2e8f1b456
+
+###
+
+### Update a blog's likes (replace with actual ID)
+PUT http://localhost:3003/api/blogs/67339cf8ce4e13d2e8f1b456
+Content-Type: application/json
+
+{
+  "title": "Understanding React Hooks",
+  "author": "Jane Doe",
+  "url": "https://example.com/react-hooks",
+  "likes": 100
+}
+
+###
+
+### Update only likes (replace with actual ID)
+PUT http://localhost:3003/api/blogs/67339cf8ce4e13d2e8f1b456
+Content-Type: application/json
+
+{
+  "likes": 50
+}
